@@ -21,15 +21,11 @@
         </div>
 
         <div class="contact-list">
+          <p class="contact-note">The trail is in Council District B. Contact Councilmember Harris and your own council member.</p>
           <div class="contact-item">
             <span class="contact-district">District B</span>
             <span class="contact-name">Lesli Harris</span>
             <a href="tel:504-658-1020" class="contact-phone">504-658-1020</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-district">District D</span>
-            <span class="contact-name">Eugene Green</span>
-            <a href="tel:504-658-1040" class="contact-phone">504-658-1040</a>
           </div>
           <div class="contact-item">
             <span class="contact-district">At-Large</span>
@@ -200,6 +196,19 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  .contact-note {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ivory);
+  }
+
+  .contact-note-secondary {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-top: 0.25rem;
   }
 
   .contact-item {
