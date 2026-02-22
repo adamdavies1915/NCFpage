@@ -1,0 +1,201 @@
+---
+const orgs = [
+  { name: 'Bike Easy', url: 'https://bikeeasy.org', desc: 'New Orleans cycling advocacy & Complete Streets Coalition lead' },
+  { name: 'Lafitte Greenway Partnership', url: 'https://lafittegreenway.org', desc: 'Manages the Greenway; recognizes NCF Parkway as critical connector' },
+  { name: 'Xavier University of Louisiana', desc: 'The namesake institution of Dr. Norman C. Francis' },
+  { name: 'UNO Transportation Institute', desc: 'Operates automated bike/ped counters on the NCF Parkway trail' },
+  { name: 'Complete Streets Coalition', desc: '~30 member organizations spanning healthcare, transit & neighborhoods' },
+  { name: 'Mid-City Neighborhood Organization', desc: 'Primary neighborhood group along the corridor' },
+  { name: 'Faubourg St. John Neighborhood Assoc.', desc: 'Northern section of the trail corridor' },
+  { name: 'Blue Krewe / Blue Bikes', desc: 'City bike share system, 970,000+ trips since 2021' },
+];
+---
+
+<section class="coalition" id="coalition">
+  <div class="coalition-inner">
+    <div class="coalition-header reveal">
+      <p class="section-label">The Coalition</p>
+      <h2 class="coalition-heading">Stronger together</h2>
+      <p class="coalition-lede">
+        A path worthy of Norman Francis requires voices from every corner of the community. These organizations already recognize the urgency.
+      </p>
+    </div>
+
+    <div class="org-grid">
+      {orgs.map((org, i) => (
+        <div class={`org-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <h3 class="org-name">
+            {org.url ? (
+              <a href={org.url} target="_blank" rel="noopener noreferrer">
+                {org.name}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+              </a>
+            ) : org.name}
+          </h3>
+          <p class="org-desc">{org.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="coalition-join reveal reveal-delay-3">
+      <p>Want your organization to join this effort?</p>
+      <a href="mailto:apathworthyoffrancis@gmail.com" class="join-btn">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coalition {
+    background: var(--ivory);
+    color: var(--text-dark);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .coalition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .coalition-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.2rem;
+  }
+
+  .coalition-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+  }
+
+  .coalition-lede {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-dark-secondary);
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .org-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .org-card {
+    padding: 1.5rem;
+    border: 1px solid #d8d0c4;
+    background: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .org-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 16px rgba(200, 168, 78, 0.1);
+  }
+
+  .org-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .org-name a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .org-name a:hover {
+    color: var(--gold-dim);
+  }
+
+  .org-name a svg {
+    flex-shrink: 0;
+    opacity: 0.4;
+    transform: translateY(1px);
+  }
+
+  .org-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-dark-secondary);
+  }
+
+  .coalition-join {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #d8d0c4;
+  }
+
+  .coalition-join p {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--text-dark-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .join-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    background: var(--dark);
+    padding: 0.9rem 2rem;
+    border: none;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .join-btn:hover {
+    background: var(--dark-warm);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .org-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .coalition {
+      padding: 4rem 1.5rem;
+    }
+    .org-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

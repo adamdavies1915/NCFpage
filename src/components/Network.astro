@@ -1,0 +1,191 @@
+---
+---
+
+<section class="network" id="network">
+  <div class="network-inner">
+    <div class="network-content">
+      <div class="network-text reveal">
+        <p class="section-label">The Network</p>
+        <h2 class="network-heading">The backbone of New Orleans cycling</h2>
+        <p class="network-body">
+          The Norman C. Francis Parkway path combined with the Lafitte Greenway forms a continuous off-street corridor from Uptown and Gert Town all the way to the French Quarter. This is not a side route. It is the <strong>primary spine</strong> of the city's 120+ mile bike network.
+        </p>
+        <p class="network-body">
+          Critically, the NCF Parkway trail is the <strong>only safe way</strong> to cross from Mid-City to Gert Town and Uptown by bike or on foot. The parallel alternatives, Broad Street and Carrollton Avenue, are high-speed, high-volume vehicle corridors with no protected bike infrastructure. There is no safe substitute for this trail.
+        </p>
+        <p class="network-body">
+          When the backbone is broken, every route that depends on it is degraded. Resurfacing this trail doesn't just fix one path; it unlocks the entire network.
+        </p>
+        <div class="network-route">
+          <div class="route-node">
+            <span class="route-dot"></span>
+            <span class="route-name">Gert Town / MLK Blvd</span>
+          </div>
+          <div class="route-connector">
+            <span class="route-label">NCF Parkway Trail - 27 blocks</span>
+          </div>
+          <div class="route-node">
+            <span class="route-dot route-dot-mid"></span>
+            <span class="route-name">Bayou St. John</span>
+          </div>
+          <div class="route-connector">
+            <span class="route-label">Lafitte Greenway</span>
+          </div>
+          <div class="route-node">
+            <span class="route-dot"></span>
+            <span class="route-name">French Quarter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="network-map reveal reveal-delay-2">
+        <figure class="map-figure">
+          <img src="/images/bike-streets-network.png" alt="Bike Streets app map showing the New Orleans cycling network with NCF Parkway highlighted in red as the central north-south corridor" />
+          <figcaption>The red line is the NCF Parkway, the only safe, direct north-south route through Mid-City. Alternatives like Broad Street and Carrollton Avenue are major vehicle corridors unsuitable for safe cycling.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .network {
+    background: var(--dark);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .network::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(122, 140, 110, 0.4), transparent);
+  }
+
+  .network-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .network-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .network-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ivory);
+    margin-bottom: 1.5rem;
+  }
+
+  .network-body {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .network-body strong {
+    color: var(--ivory);
+    font-weight: 600;
+  }
+
+  .network-route {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(122, 140, 110, 0.2);
+    background: var(--dark-warm);
+  }
+
+  .route-node {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .route-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .route-dot-mid {
+    background: var(--gold);
+  }
+
+  .route-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ivory);
+  }
+
+  .route-connector {
+    border-left: 2px dashed rgba(122, 140, 110, 0.3);
+    margin-left: 5px;
+    padding: 0.6rem 0 0.6rem 1.5rem;
+  }
+
+  .route-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--sage-light);
+    letter-spacing: 0.05em;
+  }
+
+  .map-figure {
+    margin: 0;
+    background: var(--dark-surface);
+    border: 1px solid rgba(122, 140, 110, 0.2);
+    overflow: hidden;
+  }
+
+  .map-figure img {
+    width: 100%;
+    display: block;
+  }
+
+  .map-figure figcaption {
+    padding: 1rem 1.2rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  @media (max-width: 768px) {
+    .network {
+      padding: 4rem 1.5rem;
+    }
+    .network-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .map-placeholder {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>

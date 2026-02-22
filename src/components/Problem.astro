@@ -1,0 +1,230 @@
+---
+---
+
+<section class="problem" id="problem">
+  <div class="problem-inner">
+    <div class="problem-header reveal">
+      <p class="section-label">The Problem</p>
+      <h2 class="problem-heading">A trail falling apart, with no plan to fix it</h2>
+      <p class="problem-lede">
+        The Norman C. Francis Parkway neutral ground path is one of only two "most frequently used off-street trails" in New Orleans, according to the city's own Complete Streets Annual Report. It stretches 27 blocks from Bayou St. John to Martin Luther King Jr. Boulevard, the critical north-south spine of the city's cycling network.
+      </p>
+    </div>
+
+    <div class="problem-details reveal reveal-delay-1">
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4M12 16h.01"/>
+          </svg>
+        </div>
+        <h3>No department owns it</h3>
+        <p>The paved surface falls under Public Works. The landscaping falls under Parks & Parkways. The trail itself sits in an administrative gray zone. Neither department claims it as a trail asset.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h20M5 20V8l7-5 7 5v12"/>
+            <path d="M9 20v-5h6v5"/>
+          </svg>
+        </div>
+        <h3>$510M in bonds, zero for this trail</h3>
+        <p>Voters approved a massive infrastructure bond package in November 2025 with 77% support. But there is no dedicated line item for the NCF Parkway path, despite it being one of the city's most critical corridors.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3>The backbone is broken</h3>
+        <p>This trail connects the Lafitte Greenway to Gert Town, forming the spine of New Orleans' 120+ mile bike network. A crumbling link degrades every route that depends on it.</p>
+      </div>
+    </div>
+
+    <div class="problem-photos reveal reveal-delay-2">
+      <h3 class="problem-photos-title">Trail conditions documented</h3>
+      <div class="photo-grid">
+        <figure class="photo-item">
+          <img src="/images/pavement-issue-1.jpg" alt="Cracked concrete path with a yield sign post obstructing the trail surface" />
+          <figcaption>Cracked slabs and a yield sign planted directly in the path, a hazard for cyclists and wheelchair users alike.</figcaption>
+        </figure>
+        <figure class="photo-item">
+          <img src="/images/pavement-issue-2.jpg" alt="Narrow, uneven concrete path with visible seams and a cyclist riding ahead" />
+          <figcaption>Narrow, uneven concrete with raised seams. This is one of the city's two most-used trails.</figcaption>
+        </figure>
+        <figure class="photo-item">
+          <img src="/images/rough-path-crosswalk.jpg" alt="Rough path surface approaching a crosswalk with visible deterioration" />
+          <figcaption>Approaching a crosswalk: rough surface, no smooth transition, debris along the edges.</figcaption>
+        </figure>
+        <figure class="photo-item">
+          <img src="/images/unfinished-roadworks.jpg" alt="Gap in the trail where road construction left loose gravel instead of a connected path" />
+          <figcaption>Road work left a gravel gap where the path should connect. No repair, no timeline.</figcaption>
+        </figure>
+        <figure class="photo-item">
+          <img src="/images/faded-crossing.png" alt="Intersection with faded crosswalk markings where the trail crosses the road" />
+          <figcaption>Faded crossing markings at a major intersection, barely visible to drivers.</figcaption>
+        </figure>
+        <figure class="photo-item">
+          <img src="/images/bank-street-bump.png" alt="Trail path disconnected at a road crossing with a raised curb and no smooth connection" />
+          <figcaption>Where the trail crosses Banks Street, a raised median launches cyclists airborne at any real speed. Fun for daredevils, dangerous for families on cargo bikes.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .problem {
+    background: var(--dark-warm);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .problem-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .problem-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ivory);
+    margin-bottom: 1.5rem;
+  }
+
+  .problem-lede {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin-bottom: 3rem;
+  }
+
+  .problem-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .problem-card {
+    background: var(--dark-surface);
+    border: 1px solid rgba(200, 168, 78, 0.1);
+    padding: 2rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .problem-card:hover {
+    border-color: rgba(200, 168, 78, 0.3);
+  }
+
+  .problem-card-icon {
+    color: var(--rust);
+    margin-bottom: 1rem;
+  }
+
+  .problem-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ivory);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .problem-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .problem-photos-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ivory);
+    margin-bottom: 1.5rem;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .photo-item {
+    margin: 0;
+    overflow: hidden;
+    background: var(--dark-surface);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease;
+  }
+
+  .photo-item:hover {
+    border-color: rgba(200, 168, 78, 0.25);
+  }
+
+  .photo-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-item figcaption {
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .map-figure {
+    margin: 0;
+    background: var(--dark-surface);
+    border: 1px solid rgba(200, 168, 78, 0.12);
+    overflow: hidden;
+  }
+
+  .map-figure img {
+    width: 100%;
+    display: block;
+  }
+
+  .map-figure figcaption {
+    padding: 1rem 1.2rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  @media (max-width: 768px) {
+    .problem {
+      padding: 4rem 1.5rem;
+    }
+    .problem-details {
+      grid-template-columns: 1fr;
+    }
+    .photo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

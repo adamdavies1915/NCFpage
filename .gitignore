@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# Original photos in root (copies live in public/images/)
+*.jpg
+*.jpeg
+*.png
+*.csv
+!public/**

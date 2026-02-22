@@ -1,0 +1,416 @@
+---
+const summaryStats = [
+  { number: '22', label: 'trail issues reported via 311' },
+  { number: '12', label: 'still open today (55%)' },
+  { number: '7+', label: 'years, oldest unresolved issue' },
+  { number: '0 of 3', label: 'lane striping requests ever fulfilled' },
+];
+
+const timeline = [
+  { year: '2019', entries: [
+    { date: 'Jan 2', text: 'Accessibility ramp repair reported at Baudin St.', status: 'open', note: 'Still open, 7 years later' },
+    { date: 'Nov 26', text: 'Damaged sidewalk reported at 200 S NCF Pkwy.', status: 'open', note: 'No status ever assigned. Still open, over 6 years' },
+  ]},
+  { year: '2020', entries: [
+    { date: 'May 15', text: 'Lane striping requested at 1025 S NCF Pkwy.', status: 'open', note: 'Still pending, approaching 6 years' },
+    { date: 'Jul 7', text: 'Lane striping requested at 413 S NCF Pkwy.', status: 'open', note: 'Still pending, over 5.5 years' },
+  ]},
+  { year: '2021', entries: [
+    { date: 'Sep 30', text: 'Damaged sidewalk at 400 N NCF Pkwy.', status: 'open', note: 'Inspected but never closed, over 4 years' },
+    { date: 'Oct 21', text: 'Accessibility ramp repair at 120 N NCF Pkwy.', status: 'closed', note: 'Resolved in 4 days, the only prompt resolution' },
+  ]},
+  { year: '2022', entries: [
+    { date: 'Aug 23', text: 'Sidewalk damaged or missing at 314 S NCF Pkwy.', status: 'open', note: 'Status: Reviewed. Still open, over 3.5 years' },
+  ]},
+  { year: '2023', entries: [
+    { date: 'Jun 20', text: 'Sidewalk damage at 410 S NCF Pkwy.', status: 'closed', note: 'Closed next day as "Not Enough Information"' },
+    { date: 'Jun 21', text: 'Same location re-reported the next day.', status: 'closed', note: 'Took 641 days to close' },
+    { date: 'Nov 29', text: 'Lane striping requested at Iberville & NCF Pkwy.', status: 'open', note: 'Still pending, over 2 years' },
+  ]},
+  { year: '2024', entries: [
+    { date: 'Oct 24', text: 'Three damage reports filed on the same day for the 1626–1632 block.', status: 'open', note: 'All three inspected, all three still open, 16+ months' },
+  ]},
+  { year: '2025', entries: [
+    { date: 'May 19', text: 'Sidewalk damage at 301 S NCF Pkwy.', status: 'open', note: 'Inspected. Still open, 9 months' },
+  ]},
+];
+---
+
+<section class="neglect" id="neglect">
+  <div class="neglect-inner">
+    <div class="neglect-header reveal">
+      <p class="section-label">The Record</p>
+      <h2 class="neglect-heading">Timeline of Neglect</h2>
+      <p class="neglect-lede">
+        An analysis of the city's own 311 data reveals a pattern of unaddressed trail maintenance spanning over 7 years. Of 22 issues reported on the NCF Parkway trail, <strong>12 remain open today</strong>. The city's 311 system has no category for trail issues, so the true scope of neglect is likely far greater.
+      </p>
+    </div>
+
+    <div class="neglect-summary reveal reveal-delay-1">
+      {summaryStats.map((stat) => (
+        <div class="summary-stat">
+          <span class="summary-number">{stat.number}</span>
+          <span class="summary-label">{stat.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <details class="timeline-accordion reveal reveal-delay-2">
+      <summary class="timeline-toggle">
+        <span>View full 311 timeline (2019–2025)</span>
+        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </summary>
+      <div class="timeline">
+        {timeline.map((year) => (
+          <div class="timeline-year">
+            <div class="timeline-year-label">
+              <span>{year.year}</span>
+            </div>
+            <div class="timeline-entries">
+              {year.entries.map((entry) => (
+                <div class={`timeline-entry timeline-${entry.status}`}>
+                  <div class="entry-dot"></div>
+                  <div class="entry-content">
+                    <span class="entry-date">{entry.date}</span>
+                    <p class="entry-text">{entry.text}</p>
+                    <span class={`entry-status entry-status-${entry.status}`}>
+                      {entry.status === 'open' ? 'Unresolved' : 'Closed'}
+                    </span>
+                    <p class="entry-note">{entry.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </details>
+
+    <div class="neglect-findings reveal reveal-delay-3">
+      <h3>Key findings</h3>
+      <ul>
+        <li><strong>Zero lane striping requests have ever been fulfilled.</strong> Three requests spanning 2020–2023 all remain "Pending."</li>
+        <li><strong>"Reviewed" and "Inspected" are dead ends.</strong> Issues assigned these statuses sit indefinitely without resolution. At least 4 have been stuck for over a year.</li>
+        <li><strong>The southern section is deteriorating fastest.</strong> Three simultaneous damage reports for the 1626–1632 block have all been open for 16+ months.</li>
+        <li><strong>The 311 system structurally undercounts trail issues.</strong> With no "trail" or "greenway" category, residents must report path damage as "sidewalk" or "road" issues.</li>
+      </ul>
+      <p class="findings-source">Data: City of New Orleans 311 OPCD Calls (2012–Present), exported February 22, 2026.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .neglect {
+    background: var(--dark);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .neglect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--rust), transparent);
+  }
+
+  .neglect-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust-light);
+    margin-bottom: 1.2rem;
+  }
+
+  .neglect-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ivory);
+    margin-bottom: 1.2rem;
+  }
+
+  .neglect-lede {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .neglect-lede strong {
+    color: var(--rust-light);
+    font-weight: 700;
+  }
+
+  .neglect-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+    padding: 1.5rem;
+    background: var(--dark-warm);
+    border: 1px solid rgba(181, 86, 78, 0.15);
+  }
+
+  .summary-stat {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .summary-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--rust-light);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+
+  .summary-label {
+    display: block;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+  }
+
+  .timeline-accordion {
+    margin-bottom: 3.5rem;
+    border: 1px solid rgba(181, 86, 78, 0.15);
+    background: var(--dark-warm);
+  }
+
+  .timeline-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--rust-light);
+    transition: background 0.2s ease;
+  }
+
+  .timeline-toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .timeline-toggle::marker {
+    content: '';
+  }
+
+  .timeline-toggle:hover {
+    background: rgba(181, 86, 78, 0.06);
+  }
+
+  .toggle-icon {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .timeline-accordion[open] .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .timeline-year {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-year-label {
+    padding-top: 0.15rem;
+  }
+
+  .timeline-year-label span {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ivory);
+  }
+
+  .timeline-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 1.5rem;
+  }
+
+  .timeline-entry {
+    display: grid;
+    grid-template-columns: 12px 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    position: relative;
+  }
+
+  .entry-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 0.3rem;
+    margin-left: -6px;
+    flex-shrink: 0;
+  }
+
+  .timeline-open .entry-dot {
+    background: var(--rust);
+    box-shadow: 0 0 8px rgba(181, 86, 78, 0.4);
+  }
+
+  .timeline-closed .entry-dot {
+    background: var(--sage);
+  }
+
+  .entry-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .entry-date {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+
+  .entry-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ivory);
+  }
+
+  .entry-status {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    width: fit-content;
+  }
+
+  .entry-status-open {
+    background: rgba(181, 86, 78, 0.15);
+    color: var(--rust-light);
+    border: 1px solid rgba(181, 86, 78, 0.3);
+  }
+
+  .entry-status-closed {
+    background: rgba(122, 140, 110, 0.15);
+    color: var(--sage-light);
+    border: 1px solid rgba(122, 140, 110, 0.3);
+  }
+
+  .entry-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  .neglect-findings {
+    background: var(--dark-warm);
+    border: 1px solid rgba(181, 86, 78, 0.12);
+    padding: 2rem;
+  }
+
+  .neglect-findings h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ivory);
+    margin-bottom: 1.2rem;
+  }
+
+  .neglect-findings ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .neglect-findings li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .neglect-findings li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 6px;
+    height: 6px;
+    background: var(--rust);
+    border-radius: 50%;
+  }
+
+  .neglect-findings li strong {
+    color: var(--ivory);
+    font-weight: 600;
+  }
+
+  .findings-source {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .neglect {
+      padding: 4rem 1.5rem;
+    }
+    .neglect-summary {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .timeline-year {
+      grid-template-columns: 60px 1fr;
+      gap: 1rem;
+    }
+    .timeline-year-label span {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .neglect-summary {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+  }
+</style>

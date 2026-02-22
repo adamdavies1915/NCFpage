@@ -1,0 +1,156 @@
+---
+---
+
+<section class="legacy" id="legacy">
+  <div class="legacy-inner">
+    <div class="legacy-text reveal">
+      <p class="section-label">The Legacy</p>
+      <h2 class="legacy-heading">
+        From a barber's bicycle<br />
+        <em>to a Presidential Medal</em>
+      </h2>
+      <div class="legacy-body">
+        <p>
+          Joseph Francis was a barber in Lafayette, Louisiana, who rode a bicycle to work every day because his family could not afford a car. His son Norman shined shoes on Lafayette's main street to earn pocket money. From these humble beginnings, a working-class Black family in the segregated South, dependent on a bicycle for basic transportation, came one of the most consequential New Orleanians in American history.
+        </p>
+        <p>
+          Dr. Norman C. Francis served as president of Xavier University of Louisiana for 47 years, the longest tenure of any university president in U.S. history. He received the Presidential Medal of Freedom, advised eight U.S. presidents, and during the civil rights movement, opened Xavier's campus to house Freedom Riders when no one else would.
+        </p>
+        <p>
+          In August 2020, the New Orleans City Council voted to rename Jefferson Davis Parkway, a street that had honored the president of the Confederacy since 1910, for Dr. Francis. On January 1, 2021, it officially became Norman C. Francis Parkway, running past the Xavier campus where he had served for nearly half a century.
+        </p>
+        <p>
+          Dr. Francis passed away on February 18, 2026, at age 94. Mayor Moreno called him "one of New Orleans' greatest sons."
+        </p>
+      </div>
+    </div>
+    <div class="legacy-visual reveal reveal-delay-2">
+      <div class="legacy-photo">
+        <img src="/images/norman-francis-medal.jpg" alt="Dr. Norman C. Francis receives the Presidential Medal of Freedom from President George W. Bush in the East Room of the White House, December 15, 2006." />
+        <p class="legacy-photo-caption">Dr. Francis receives the Presidential Medal of Freedom, December 2006. <span class="photo-credit">White House photo by Shealah Craighead, public domain.</span></p>
+      </div>
+      <blockquote class="legacy-quote">
+        <p>Today, roughly 20% of New Orleans households still lack access to a vehicle. The path bearing Norman Francis's name is used daily by thousands of people, many of whom, like Joseph Francis, depend on a bicycle not for recreation but to get to work, school, and the grocery store.</p>
+        <p class="legacy-quote-emphasis">That path is crumbling.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<style>
+  .legacy {
+    background: var(--ivory);
+    color: var(--text-dark);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .legacy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .legacy-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.2rem;
+  }
+
+  .legacy-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+  }
+
+  .legacy-heading em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--gold-dim);
+  }
+
+  .legacy-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .legacy-body p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-dark-secondary);
+  }
+
+  .legacy-photo {
+    margin-bottom: 2rem;
+  }
+
+  .legacy-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .legacy-photo-caption {
+    font-size: 0.8rem;
+    color: var(--text-dark-secondary);
+    margin-top: 0.6rem;
+    line-height: 1.4;
+  }
+
+  .photo-credit {
+    opacity: 0.6;
+  }
+
+  .legacy-quote {
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+
+  .legacy-quote p {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-dark-secondary);
+  }
+
+  .legacy-quote-emphasis {
+    font-size: 1.4rem !important;
+    font-weight: 600;
+    color: var(--rust) !important;
+    font-style: italic;
+    margin-top: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .legacy {
+      padding: 4rem 1.5rem;
+    }
+    .legacy-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

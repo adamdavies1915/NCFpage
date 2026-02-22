@@ -1,0 +1,217 @@
+---
+---
+
+<section class="demands" id="demands">
+  <div class="demands-inner">
+    <div class="demands-header reveal">
+      <p class="section-label">What We're Asking For</p>
+      <h2 class="demands-heading">Three steps to fix the Francis Trail</h2>
+      <p class="demands-lede">
+        The estimated cost for full resurfacing is <strong>$1&ndash;3 million</strong>, modest by city capital standards, and well within the scale of bond-funded projects already approved.
+      </p>
+    </div>
+
+    <div class="demands-timeline">
+      <div class="demand-item reveal">
+        <div class="demand-marker">
+          <span class="demand-number">1</span>
+          <div class="demand-line"></div>
+        </div>
+        <div class="demand-content">
+          <span class="demand-tag demand-tag-urgent">Immediate</span>
+          <h3>Assess and assign ownership</h3>
+          <p>
+            Direct the Department of Public Works to conduct a formal pavement condition assessment of the entire neutral ground path. Assign clear departmental responsibility, whether DPW or Parks & Parkways, so the trail is no longer an orphan asset in a bureaucratic gray zone.
+          </p>
+        </div>
+      </div>
+
+      <div class="demand-item reveal reveal-delay-1">
+        <div class="demand-marker">
+          <span class="demand-number">2</span>
+          <div class="demand-line"></div>
+        </div>
+        <div class="demand-content">
+          <span class="demand-tag demand-tag-near">Near-term</span>
+          <h3>Fund full resurfacing</h3>
+          <p>
+            Allocate bond funds, from the "Citywide Greenspace Restoration" category or council-district infrastructure allocations, to resurface the path to the Lafitte Greenway standard: <strong>12-foot-wide smooth asphalt</strong>, with ADA-compliant crossings at every intersection, proper drainage, and wayfinding signage connecting to the Greenway.
+          </p>
+        </div>
+      </div>
+
+      <div class="demand-item reveal reveal-delay-2">
+        <div class="demand-marker">
+          <span class="demand-number">3</span>
+        </div>
+        <div class="demand-content">
+          <span class="demand-tag demand-tag-safety">Additional Safety</span>
+          <h3>Raised crosswalks and crossing security</h3>
+          <p>
+            Install raised crosswalks and improved crossing infrastructure at every intersection along the corridor. The path crosses multiple busy streets, and every crossing is a point of danger for pedestrians, cyclists, wheelchair users, and families with children. Raised crosswalks slow vehicle traffic and create visible, accessible connections.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .demands {
+    background: var(--ivory);
+    color: var(--text-dark);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .demands::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .demands-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.2rem;
+  }
+
+  .demands-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+  }
+
+  .demands-lede {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-dark-secondary);
+    margin-bottom: 3.5rem;
+  }
+
+  .demands-lede strong {
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+
+  .demands-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .demand-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 1.5rem;
+  }
+
+  .demand-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .demand-number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ivory);
+    background: var(--dark);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .demand-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--dark), transparent);
+    min-height: 20px;
+  }
+
+  .demand-content {
+    padding-bottom: 2.5rem;
+  }
+
+  .demand-tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .demand-tag-urgent {
+    background: var(--rust);
+    color: white;
+  }
+
+  .demand-tag-near {
+    background: var(--gold-dim);
+    color: white;
+  }
+
+  .demand-tag-safety {
+    background: var(--sage);
+    color: white;
+  }
+
+  .demand-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .demand-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark-secondary);
+  }
+
+  .demand-content p strong {
+    color: var(--text-dark);
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .demands {
+      padding: 4rem 1.5rem;
+    }
+    .demand-item {
+      grid-template-columns: 36px 1fr;
+      gap: 1rem;
+    }
+    .demand-number {
+      width: 36px;
+      height: 36px;
+      font-size: 1rem;
+    }
+  }
+</style>

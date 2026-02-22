@@ -1,0 +1,202 @@
+---
+---
+
+<section class="hero" id="hero">
+  <div class="hero-grain"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">A grassroots campaign for New Orleans</p>
+    <h1 class="hero-title">
+      A Path Worthy<br />
+      <em>of Norman Francis</em>
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-subtitle">
+      Honor Norman Francis.<br />Rebuild his trail.
+    </p>
+    <p class="hero-subline">
+      For the New Orleanians who depend on it.
+    </p>
+    <a href="#take-action" class="hero-cta">
+      <span>Take Action</span>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M19 12l-7 7-7-7" />
+      </svg>
+    </a>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark);
+    overflow: hidden;
+  }
+
+  .hero-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 45%, rgba(200, 168, 78, 0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 80% 60% at 30% 80%, rgba(122, 140, 110, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes heroFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-kicker {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--ivory);
+    letter-spacing: -0.01em;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 2px;
+    background: var(--gold-dim);
+    margin: 1.8rem auto;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto 1rem;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+  }
+
+  .hero-subline {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 400;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.5;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    padding: 1rem 2.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: heroFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both;
+  }
+
+  .hero-cta:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(200, 168, 78, 0.25);
+  }
+
+  .hero-cta svg {
+    transition: transform 0.3s ease;
+  }
+
+  .hero-cta:hover svg {
+    transform: translateY(3px);
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .hero-scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, transparent, var(--gold-dim));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+    50% { opacity: 0.8; transform: scaleY(1); }
+  }
+
+  @media (max-width: 640px) {
+    .hero-content {
+      padding: 1.5rem;
+    }
+    .hero-cta {
+      padding: 0.9rem 1.8rem;
+    }
+  }
+</style>

@@ -1,0 +1,386 @@
+---
+---
+
+<section class="action" id="take-action">
+  <div class="action-inner">
+    <div class="action-header reveal">
+      <p class="section-label">Take Action</p>
+      <h2 class="action-heading">Two calls, five minutes, real change</h2>
+      <p class="action-lede">
+        Every phone call and every 311 report creates institutional pressure that officials cannot ignore. Here's how you can help right now.
+      </p>
+    </div>
+
+    <div class="action-cards">
+      <div class="action-card action-card-call reveal">
+        <div class="action-card-header">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <h3>Call Your Council Member</h3>
+        </div>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="contact-district">District B</span>
+            <span class="contact-name">Lesli Harris</span>
+            <a href="tel:504-658-1020" class="contact-phone">504-658-1020</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-district">District D</span>
+            <span class="contact-name">Eugene Green</span>
+            <a href="tel:504-658-1040" class="contact-phone">504-658-1040</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-district">At-Large</span>
+            <span class="contact-name">JP Morrell</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-district">At-Large</span>
+            <span class="contact-name">Matthew Willard</span>
+          </div>
+        </div>
+
+        <div class="call-script">
+          <h4>What to say:</h4>
+          <p>
+            "I'm calling to ask that the council allocate bond funds to resurface the Norman C. Francis Parkway trail. It's one of the city's two most-used off-street paths, it's crumbling, and no department has taken responsibility. With Dr. Francis's passing, now is the time to make this path worthy of his legacy."
+          </p>
+        </div>
+      </div>
+
+      <div class="action-card action-card-311 reveal reveal-delay-1">
+        <div class="action-card-header">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+          <h3>File a 311 Report</h3>
+        </div>
+
+        <a href="https://nola311.org" target="_blank" rel="noopener noreferrer" class="action-311-link">
+          <span>Go to nola311.org</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+          </svg>
+        </a>
+
+        <div class="steps-list">
+          <h4>How to file effectively:</h4>
+          <ol>
+            <li>Categorize as <strong>"pothole / road surface issue"</strong>, not a park complaint. This routes it to DPW, who owns the pavement.</li>
+            <li>Include photos of the specific damage: cracks, heaves, root intrusions, gaps.</li>
+            <li>Note the cross street and which side of the neutral ground.</li>
+            <li>If your report is closed without repair, <strong>refile immediately</strong> and reference the original case number.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-share reveal reveal-delay-2">
+      <h3>Spread the Word</h3>
+      <p>Share this page with your neighbors, your neighborhood association, and on social media. The more voices, the harder to ignore.</p>
+      <button class="share-btn" id="copy-link-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+        </svg>
+        <span>Copy link to this page</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('copy-link-btn');
+  if (btn) {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        const span = btn.querySelector('span');
+        if (span) {
+          const original = span.textContent;
+          span.textContent = 'Copied!';
+          setTimeout(() => { span.textContent = original; }, 2000);
+        }
+      } catch {
+        // Fallback: select text for manual copy
+      }
+    });
+  }
+</script>
+
+<style>
+  .action {
+    background: var(--dark-warm);
+    padding: 6rem 2rem;
+    position: relative;
+  }
+
+  .action::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(200, 168, 78, 0.3), transparent);
+  }
+
+  .action-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .action-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ivory);
+    margin-bottom: 1rem;
+  }
+
+  .action-lede {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin-bottom: 3rem;
+  }
+
+  .action-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .action-card {
+    background: var(--dark-surface);
+    border: 1px solid rgba(200, 168, 78, 0.12);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .action-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .action-card-header svg {
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .action-card-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ivory);
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-district {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(200, 168, 78, 0.1);
+    padding: 0.2rem 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .contact-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ivory);
+  }
+
+  .contact-phone {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-left: auto;
+    transition: color 0.2s ease;
+  }
+
+  .contact-phone:hover {
+    color: var(--gold);
+  }
+
+  .call-script {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 1.2rem;
+  }
+
+  .call-script h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.6rem;
+  }
+
+  .call-script p {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .action-311-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--gold);
+    padding: 0.8rem 1.5rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .action-311-link:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .steps-list h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+  }
+
+  .steps-list ol {
+    list-style: none;
+    counter-reset: steps;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .steps-list li {
+    counter-increment: steps;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .steps-list li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 0;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .steps-list li strong {
+    color: var(--ivory);
+    font-weight: 600;
+  }
+
+  .action-share {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .action-share h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ivory);
+    margin-bottom: 0.6rem;
+  }
+
+  .action-share p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+  }
+
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold);
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .share-btn:hover {
+    background: rgba(200, 168, 78, 0.1);
+    color: var(--gold-light);
+  }
+
+  @media (max-width: 768px) {
+    .action {
+      padding: 4rem 1.5rem;
+    }
+    .action-cards {
+      grid-template-columns: 1fr;
+    }
+    .action-card {
+      padding: 1.8rem;
+    }
+    .contact-item {
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .contact-phone {
+      margin-left: 0;
+    }
+  }
+</style>
