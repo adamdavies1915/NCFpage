@@ -1,7 +1,7 @@
 ---
 const summaryStats = [
-  { number: '22', label: 'trail issues reported via 311' },
-  { number: '12', label: 'still open today (55%)' },
+  { number: '33', label: 'trail issues reported via 311' },
+  { number: '14', label: 'still open today (42%)' },
   { number: '7+', label: 'years, oldest unresolved issue' },
   { number: '0 of 3', label: 'lane striping requests ever fulfilled' },
 ];
@@ -9,6 +9,8 @@ const summaryStats = [
 const timeline = [
   { year: '2019', entries: [
     { date: 'Jan 2', text: 'Accessibility ramp repair reported at Baudin St.', status: 'open', note: 'Still open, 7 years later' },
+    { date: 'Feb 25', text: 'Bike lane issue reported at NCF Pkwy & Washington Ave.', status: 'closed', note: 'Took 444 days to close. No resolution recorded' },
+    { date: 'May 21', text: 'Road surface marking maintenance at 1000 S NCF Pkwy.', status: 'open', note: 'No status. Still open, nearly 7 years' },
     { date: 'Nov 26', text: 'Damaged sidewalk reported at 200 S NCF Pkwy.', status: 'open', note: 'No status ever assigned. Still open, over 6 years' },
   ]},
   { year: '2020', entries: [
@@ -17,7 +19,8 @@ const timeline = [
   ]},
   { year: '2021', entries: [
     { date: 'Sep 30', text: 'Damaged sidewalk at 400 N NCF Pkwy.', status: 'open', note: 'Inspected but never closed, over 4 years' },
-    { date: 'Oct 21', text: 'Accessibility ramp repair at 120 N NCF Pkwy.', status: 'closed', note: 'Resolved in 4 days, the only prompt resolution' },
+    { date: 'Oct 7', text: 'Damaged sidewalk at 216 N NCF Pkwy.', status: 'closed', note: 'Referred to external agency. Took 467 days to close' },
+    { date: 'Oct 21', text: 'Accessibility ramp repair at 120 N NCF Pkwy.', status: 'closed', note: 'Resolved in 4 days, one of only 3 fast resolutions' },
   ]},
   { year: '2022', entries: [
     { date: 'Aug 23', text: 'Sidewalk damaged or missing at 314 S NCF Pkwy.', status: 'open', note: 'Status: Reviewed. Still open, over 3.5 years' },
@@ -25,13 +28,18 @@ const timeline = [
   { year: '2023', entries: [
     { date: 'Jun 20', text: 'Sidewalk damage at 410 S NCF Pkwy.', status: 'closed', note: 'Closed next day as "Not Enough Information"' },
     { date: 'Jun 21', text: 'Same location re-reported the next day.', status: 'closed', note: 'Took 641 days to close' },
+    { date: 'Jul 10', text: 'NORDC facilities maintenance at 601 S NCF Pkwy.', status: 'closed', note: 'Took 659 days to resolve' },
+    { date: 'Jul 22', text: 'Sidewalk damaged or missing at 430 S NCF Pkwy.', status: 'open', note: 'Status: Reviewed. Still open, over 2.5 years' },
     { date: 'Nov 29', text: 'Lane striping requested at Iberville & NCF Pkwy.', status: 'open', note: 'Still pending, over 2 years' },
   ]},
   { year: '2024', entries: [
-    { date: 'Oct 24', text: 'Three damage reports filed on the same day for the 1626–1632 block.', status: 'open', note: 'All three inspected, all three still open, 16+ months' },
+    { date: 'Mar–Sep', text: 'Three park maintenance requests filed along the trail.', status: 'closed', note: 'Each took 400–577 days to resolve' },
+    { date: 'Oct 24', text: 'Three damage reports filed on the same day for the 1626-1632 block.', status: 'open', note: 'All three inspected, all three still open, 16+ months' },
   ]},
   { year: '2025', entries: [
+    { date: 'Mar 6', text: 'Park maintenance at 200 block S NCF Pkwy.', status: 'open', note: 'Still pending, nearly 1 year' },
     { date: 'May 19', text: 'Sidewalk damage at 301 S NCF Pkwy.', status: 'open', note: 'Inspected. Still open, 9 months' },
+    { date: 'Nov 4', text: 'Park maintenance at 738 S NCF Pkwy.', status: 'open', note: 'Still pending, 3.5 months' },
   ]},
 ];
 ---
@@ -42,7 +50,7 @@ const timeline = [
       <p class="section-label">The Record</p>
       <h2 class="neglect-heading">Timeline of Neglect</h2>
       <p class="neglect-lede">
-        An analysis of the city's own 311 data reveals a pattern of unaddressed trail maintenance spanning over 7 years. Of 22 issues reported on the NCF Parkway trail, <strong>12 remain open today</strong>. The city's 311 system has no category for trail issues, so the true scope of neglect is likely far greater.
+        The city's own 311 data shows trail maintenance requests going unaddressed for over 7 years. Of 33 issues reported on the NCF Parkway trail, <strong>14 remain open today</strong>. The city's 311 system has no category for trail issues, so the true scope of neglect is likely far greater.
       </p>
     </div>
 
@@ -91,9 +99,11 @@ const timeline = [
     <div class="neglect-findings reveal reveal-delay-3">
       <h3>Key findings</h3>
       <ul>
-        <li><strong>Zero lane striping requests have ever been fulfilled.</strong> Three requests spanning 2020–2023 all remain "Pending."</li>
-        <li><strong>"Reviewed" and "Inspected" are dead ends.</strong> Issues assigned these statuses sit indefinitely without resolution. At least 4 have been stuck for over a year.</li>
-        <li><strong>The southern section is deteriorating fastest.</strong> Three simultaneous damage reports for the 1626–1632 block have all been open for 16+ months.</li>
+        <li><strong>Zero lane striping requests have ever been fulfilled.</strong> Three requests spanning 2020-2023 all remain "Pending." The oldest has been waiting nearly 6 years.</li>
+        <li><strong>Sidewalk damage reports average 445 days to resolve</strong>, when they get resolved at all. Of 15 sidewalk-related reports, 8 remain open.</li>
+        <li><strong>Only 3 of 33 issues were resolved within 2 weeks.</strong> Everything else took months to years, or was never resolved.</li>
+        <li><strong>"Reviewed" and "Inspected" are dead ends.</strong> Issues assigned these statuses sit indefinitely. At least 4 have been stuck for over a year.</li>
+        <li><strong>The southern section is deteriorating fastest.</strong> Three simultaneous damage reports for the 1626-1632 block have all been open for 16+ months.</li>
         <li><strong>The 311 system structurally undercounts trail issues.</strong> With no "trail" or "greenway" category, residents must report path damage as "sidewalk" or "road" issues.</li>
       </ul>
       <p class="findings-source">Data: City of New Orleans 311 OPCD Calls (2012–Present), exported February 22, 2026.</p>
